@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/cadastro.css">
+
+    <title>Cadastro</title>
+  </head>
+  <body>
+
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="img/logo-mysta.png" alt="" style="width: 70px;"></a>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5 pag">
+        <h1>Orçamento</h1>
+        <hr class="mb-5">
+         <form name="orcamento" id="">
+             <fieldset>
+                 <legend>Dados de Acesso</legend>
+             <div class="form-group">
+               <label for="login">Login</label>
+               <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu login aqui">
+               
+             </div>
+ 
+             <div class="form-group">
+               <label for="senha">Senha</label>
+               <input type="password" class="form-control" id="senha" placeholder="Senha" oninput="senha1()">
+             </div>
+ 
+             <div class="form-group">
+               <label for="senha2">Confirmar senha</label>
+               <input type="password" class="form-control" id="senha2" placeholder="Confirme sua senha" oninput="senha2()">
+             </div>
+ 
+             <div class="form-group form-check">
+               <input type="checkbox" class="form-check-input" id="exampleCheck1">
+               <label class="form-check-label" for="exampleCheck1">Concordar com os termos de privacidade</label>
+             </div>
+ 
+             <p id="msg"># As senhas não conferem</p>
+         </fieldset>
+         <br> <br>
+ 
+ 
+ 
+         <fieldset>
+             <legend>Dados de Pagamento</legend>
+             <div class="form-group">
+                 <p>
+                     <label for="senha2">Tipo de Acesso</label>
+                 </p>
+                 <input type="radio" id="pf" name="tipo" value="pessoa física" checked onchange="pessoa('pf')">
+                 <label for="pf"> pessoa física</label>
+ 
+                 <input type="radio" id="pf" name="tipo" value="pessoa juridica" onchange="pessoa('pj')">
+                 <label for="pf"> pessoa Juridica</label>
+               </div>
+ 
+               <div class="form-group" id="cpf">
+                 <label for="cpf">CPF</label>
+                 <input type="text" class="form-control" id="cpf" name="cpf" placeholder="xxx.xxx.xxx-xx" onkeypress="mascara_cpf(this)" onkeyup="salto(this.name,this.value)" maxlength="14" onkey>
+               </div>
+ 
+               <div class="form-group" id="cnpj">
+                 <label for="cnpj">CNPJ</label>
+                 <input type="text" class="form-control" name="cnpj" placeholder="xx.xxx.xxx/xxxx-xx" onkeypress="mascara_cnpj(this)" maxlength="18">
+               </div>
+ 
+               <div class="form-group">
+                 <label for="tel">Telefone</label>
+                 <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(xx)xxxxx-xxxx" onkeypress="mascara_tell(this)" maxlength="14">
+               </div>
+ 
+               <div class="form-group">
+                 <label for="pagamento">Forma de pagamento</label>
+                 <select name="form-control" id="pagamento" name="pagamento" onchange="abrir()">
+                     <option value="dinheiro">Dinheiro</option>
+                     <option value="Cartão">Cartão</option>
+                     <option value="Cheque">Cheque</option>
+                 </select>
+               </div>
+ 
+               <div class="form-group" id="cartao">
+                 <fieldset>
+                   <label for="num"> Nº do Cartão</label>
+                   <input type="text" class="form-control" name="num">
+ 
+                   <label for="cod"> Código de segurança</label>
+                   <input type="text" class="form-control" name="cod">
+ 
+                   <label for="vencimento"> Vencimento</label>
+                   <input type="text" name="form-control" id="vencimento">
+                 </fieldset>
+               </div>
+               
+         </fieldset>
+ 
+             <div class="text-right mt-3">
+                 <button type="submit" class="btn btn-danger">Enviar</button>
+             </div>
+           </form>
+     </div>
+
+    </div>
+    <br> <br> <br>
+
+
+
+
+
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="cadastro.js"></script>
+</body>
+</html>
